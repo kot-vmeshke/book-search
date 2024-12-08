@@ -13,7 +13,7 @@
     "prepare": "husky",
     "test": "vitest run --coverage",
     "predeploy": "npm run build",
-    "deploy": "gh-pages-clean gh-pages -d dist -r https://github.com/kot-vmeshke/book-search.git"
+    "deploy": "gh-pages-clean gh-pages -b main -d dist -r https://github.com/kot-vmeshke/book-search.git"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
