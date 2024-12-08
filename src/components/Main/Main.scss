@@ -1,0 +1,23 @@
+.main {
+  flex: 1 1 100%;
+  padding: 60px 0;
+
+  &__container {
+    position: relative;
+    min-height: 100px;
+    display: flex;
+    gap: 12px;
+  }
+
+  &__left {
+    container-type: inline-size;
+    container-name: main;
+    width: 100%;
+  }
+
+  &__right {
+    &:has(.details) {
+      width: 100%;
+    }
+  }
+}

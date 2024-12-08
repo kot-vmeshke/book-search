@@ -1,0 +1,37 @@
+.book {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--color-bg-medium);
+
+  &__author {
+    margin-bottom: 8px;
+    padding-right: 40px;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--color-text);
+  }
+
+  &__name {
+    margin-top: auto;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--color-text);
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: '';
+    }
+  }
+
+  &__subjects {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--color-text);
+  }
+}
