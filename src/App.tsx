@@ -5,19 +5,24 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ThemeContext } from './context/ThemeContext';
 import { useState } from 'react';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <SearchPage />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: 'book/:bookId',
+          element: <DetailsBookCard />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <SearchPage />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: 'book/:bookId',
-        element: <DetailsBookCard />,
-      },
-    ],
-  },
-]);
+    basename: '/book-search',
+  }
+);
 
 const App = () => {
   const [theme, setTheme] = useState(
