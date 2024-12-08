@@ -1,7 +1,5 @@
 # Search books
 
-Training project for the React Course at [RS-School](https://rs.school/). 
-
 ## Description
 This project allows users to search for books using [Gutendex API](https://gutendex.com/), to view book details, and read the text of books.
 You can see the application [deployed here](https://book-search-rss-react-2024q3.vercel.app/).
@@ -12,7 +10,7 @@ This project uses:
 * Vite
 * React
 * Redux
-* Vitest, React Testing Libarary
+* Vitest, React Testing Library
 * ESLint, Prettier
 
 ## Installation
