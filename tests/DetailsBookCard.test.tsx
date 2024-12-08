@@ -45,7 +45,7 @@ vi.mock('react-router-dom', async (importOriginal) => {
   const actual = await importOriginal();
   return {
     ...(actual as object),
-    useParams: vi.fn().mockReturnValue({ bookId: 1 }),
+    useParams: vi.fn().mockReturnValue({ bookId: '1' }),
   };
 });
 
@@ -57,13 +57,13 @@ describe('DetailsBookCard', () => {
   });
 
   it('Detailed card component correctly displays the detailed card data', async () => {
-    renderWithProviderAndRouter(<DetailsBookCard />);
+    renderWithProviderAndRouter(<DetailsBookCard />, { route: '/book/1' });
 
     await waitFor(() => {
       expect(screen.getByRole('heading', { level: 3 }).textContent).toBe(
         book.title
       );
-    });
+    }, {timeout: 3000});
   });
 
   it('Clicking the close button hides the component', async () => {

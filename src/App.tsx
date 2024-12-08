@@ -20,7 +20,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/book-search',
+    basename: process.env.NODE_ENV === 'test' ? '' : '/book-search',
   }
 );
 

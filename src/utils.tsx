@@ -9,6 +9,7 @@ import { setupStore } from './store/store';
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: Partial<RootState>;
   store?: AppStore;
+  route?: string;
 }
 
 export function renderWithProviderAndRouter(
@@ -18,12 +19,13 @@ export function renderWithProviderAndRouter(
   const {
     preloadedState = {},
     store = setupStore(preloadedState),
+    route = '/',
     ...renderOptions
   } = extendedRenderOptions;
 
   const Wrapper = ({ children }: PropsWithChildren) => (
     <Provider store={store}>
-      <MemoryRouter>{children}</MemoryRouter>
+      <MemoryRouter initialEntries={[route]}>{children}</MemoryRouter>
     </Provider>
   );
 
